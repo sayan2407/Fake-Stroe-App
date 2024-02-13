@@ -1,0 +1,11 @@
+
+/* single product */
+.product-layout {
+    display: flex;
+    /* align-items: center; */
+}
+
+.product-info {
+    margin: 15px 10px;
+    padding: 20px;
+}
