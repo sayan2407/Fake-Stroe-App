@@ -14,6 +14,12 @@ import { useAppContext } from './context/AppProvider';
 import AllProducts from './page/AllProducts';
 import CategoryProduct from './page/CategoryProduct';
 import SingleProduct from './page/SingleProduct';
+import Admin from './Admin/Admin';
+import AdminHome from './Admin/Components/AdminHome';
+import AdminProducts from './Admin/Components/AdminProducts';
+import AdminUsers from './Admin/Components/AdminUsers';
+import EditProduct from './Admin/Components/EditProduct';
+import Cart from './page/Cart';
 
 
 
@@ -37,9 +43,16 @@ function App() {
      <NavBar/>
      <Routes>
       <Route path="/" element={<Home/>}></Route>
+      <Route path="/cart" element={<Cart/>}></Route>
       <Route path="/all-products" element={<AllProducts/>}></Route>
       <Route path="/products/:category" element={<CategoryProduct/>}></Route>
       <Route path="/product/:productId" element={<SingleProduct/>}></Route>
+      <Route element={<Admin/>}>
+        <Route path="/admin" element={<AdminHome/>}></Route>
+        <Route path="/admin/products" element={<AdminProducts/>}></Route>
+        <Route path="/admin/users" element={<AdminUsers/>}></Route>
+        <Route path="/admin/products/edit-product/:id" element={<EditProduct/>}></Route>
+      </Route>
      </Routes>
     </div>
   );

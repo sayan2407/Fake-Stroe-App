@@ -1,8 +1,12 @@
 import { Link } from "react-router-dom";
 import { useAppContext } from "../context/AppProvider";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 const NavBar = () => {
  const storeName = "Fake Store App";
- const {categories} = useAppContext();
+ const {categories, cartProducts} = useAppContext();
+
+ console.log('cartProducts ', cartProducts);
 
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -50,6 +54,10 @@ const NavBar = () => {
            
           </ul>
         </div>
+        <Link to="/cart" style={{cursor: 'pointer'}}>
+          <span style={{color: 'red'}}>{cartProducts.reduce((total, item)=> total + item.quantity, 0)}</span>
+          <FontAwesomeIcon style={{color: 'blue', width: '20px', marginRight: '20px'}} icon={faCartShopping} />
+        </Link>
       </div>
     </nav>
   );

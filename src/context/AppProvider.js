@@ -6,6 +6,7 @@ export const AppProvider = ({ children }) => {
     const [categories, setCategories] = useState([]);
   const [products, setProducts] = useState([]);
   const [categoryProducts, setCategoryProducts] = useState([]);
+  const [ cartProducts, setCartProducts ] = useState([]);
   
     return (
       <AppContext.Provider
@@ -15,7 +16,9 @@ export const AppProvider = ({ children }) => {
             products,
             setProducts,
             categoryProducts,
-            setCategoryProducts
+            setCategoryProducts,
+            cartProducts,
+            setCartProducts
         }}
       >
         {children}
