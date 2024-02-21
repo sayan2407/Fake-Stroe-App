@@ -20,6 +20,7 @@ import AdminProducts from './Admin/Components/AdminProducts';
 import AdminUsers from './Admin/Components/AdminUsers';
 import EditProduct from './Admin/Components/EditProduct';
 import Cart from './page/Cart';
+import Checkout from './page/Checkout';
 
 
 
@@ -44,9 +45,13 @@ function App() {
      <Routes>
       <Route path="/" element={<Home/>}></Route>
       <Route path="/cart" element={<Cart/>}></Route>
+      <Route path="/checkout" element={<Checkout/>}></Route>
       <Route path="/all-products" element={<AllProducts/>}></Route>
       <Route path="/products/:category" element={<CategoryProduct/>}></Route>
       <Route path="/product/:productId" element={<SingleProduct/>}></Route>
+      
+      
+      {/* Admin Area */}
       <Route element={<Admin/>}>
         <Route path="/admin" element={<AdminHome/>}></Route>
         <Route path="/admin/products" element={<AdminProducts/>}></Route>

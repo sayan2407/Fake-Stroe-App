@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "./Components.css";
+import "./components.css";
 
 const Product = ({ item }) => {
   console.log(item);
